@@ -17,7 +17,7 @@ export class InputZH2EN {
     this.main();
   }
   main() {
-    vscode.commands.registerCommand("wisen-translate.zh-en", async () => {
+    vscode.commands.registerCommand("Wisen-translate.zh-en", async () => {
       const text = await vscode.window.showInputBox({
         prompt: "输入中文翻译至英文",
       });

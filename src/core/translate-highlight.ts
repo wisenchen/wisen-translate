@@ -17,7 +17,7 @@ export class TranslateHighlightText {
   }
   main() {
     vscode.commands.registerCommand(
-      "wisen-translate.translate-highlight",
+      "Wisen-translate.translate-highlight",
       async () => {
         const editor = vscode.window.activeTextEditor;
         if (editor) {
@@ -27,12 +27,8 @@ export class TranslateHighlightText {
             vscode.window.showInformationMessage('请先选择文本后在执行该命令！');
             return;
           }
-          const translateResult = await translate({
-            text: selectionText,
-            from: Language.Auto,
-            to: Language.ZhCn,
-          });
-          
+          const translateResult = await translate(selectionText);
+          console.log(translateResult,"hightlight");
           if (translateResult.result) {
             vscode.window.showInformationMessage(`
             翻译结果：${translateResult.result.join("")}

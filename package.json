@@ -1,13 +1,18 @@
 {
-  "name": "Wisen-Translate",
+  "name": "wisen-translate",
   "displayName": "Wisen-Translate",
   "description": "鼠标悬浮翻译，内嵌翻译页面",
   "version": "0.0.1",
   "publisher": "wisen",
   "icon": "resource/icon.png",
+  "keywords": [
+    "translate",
+    "翻译",
+    "Wisen"
+  ],
   "repository": {
-    "url": "https://github.com/ezshine/vscode-ilovejuejin"
-},
+    "url": "https://github.com/wisenchen/wisen-translate.git"
+  },
   "engines": {
     "vscode": "^1.45.0"
   },
@@ -20,10 +25,10 @@
   "main": "./out/extension.js",
   "contributes": {
     "configuration": {
-      "title": "wisen translate",
+      "title": "Wisen translate",
       "type": "object",
       "properties": {
-        "wisenTranslate.origin": {
+        "WisenTranslate.origin": {
           "type": "string",
           "default": "youdao",
           "description": "设置翻译使用的源，可选填，baidu、youdao、google",
@@ -33,7 +38,7 @@
             "google"
           ]
         },
-        "wisenTranslate.disableHover": {
+        "WisenTranslate.disableHover": {
           "type": "boolean",
           "default": false,
           "description": "是否禁用鼠标悬浮翻译"
@@ -42,46 +47,28 @@
     },
     "commands": [
       {
-        "command": "wisen-translate.zh-en",
+        "command": "Wisen-translate.zh-en",
         "title": "输入中文翻译成英文",
         "category": "Wisen Translate"
       },
       {
-        "command": "wisen-translate.translate-highlight",
+        "command": "Wisen-translate.translate-highlight",
         "title": "翻译选中文字",
         "category": "Wisen Translate"
       }
     ],
     "keybindings": [
       {
-        "command": "wisen-translate.zh-en",
+        "command": "Wisen-translate.zh-en",
         "key": "alt+t",
         "mac": "alt+t"
       },
       {
-        "command": "wisen-translate.translate-highlight",
+        "command": "Wisen-translate.translate-highlight",
         "key": "alt+w",
         "mac": "alt+w"
       }
-    ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "wisenTranslate",
-          "title": "选择翻译",
-          "icon": "resource/translate.svg"
-        }
-      ]
-    },
-    "views": {
-      "wisenTranslate": [
-        {
-          "id": "wisenTranslate-item",
-          "name": "item",
-          "when": ""
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

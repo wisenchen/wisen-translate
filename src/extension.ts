@@ -14,7 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log(
-    'Congratulations, your extension "wisen-translate" is now active!'
+    'Congratulations, your extension "Wisen-translate" is now active!'
   );
 
   // The command has been defined in the package.json file
@@ -27,18 +27,22 @@ export function activate(context: vscode.ExtensionContext) {
 
   const isDisableHover = vscode.workspace
     .getConfiguration()
-    .get("wisenTranslate.disableHover");
+    .get("WisenTranslate.disableHover");
 
   isDisableHover || hoverTranslate.onHover();
+
   // 输入中文翻译至英文
   new InputZH2EN(context);
+
+  // 翻译选中文字
   new TranslateHighlightText(context);
+
   // 监听配置更改
   vscode.workspace.onDidChangeConfiguration((e) => {
-    if (e.affectsConfiguration("wisenTranslate.disableHover")) {
+    if (e.affectsConfiguration("WisenTranslate.disableHover")) {
       const isDisableHover = vscode.workspace
         .getConfiguration()
-        .get("wisenTranslate.disableHover");
+        .get("WisenTranslate.disableHover");
       if (isDisableHover) {
         hoverTranslate.removeHover();
       } else {
@@ -46,16 +50,18 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }
   });
+ 
 
+  // 
   // 视图容器
   // 实现树视图的初始化
-  TreeViewProvider.init();
-  context.subscriptions.push(
-    vscode.commands.registerCommand("itemClick", (label: ApiId) => {
-      const webView = createWebView(context, vscode.ViewColumn.Active, label);
-      context.subscriptions.push(webView);
-    })
-  );
+  // TreeViewProvider.init();
+  // context.subscriptions.push(
+  //   vscode.commands.registerCommand("itemClick", (label: ApiId) => {
+  //     const webView = createWebView(context, vscode.ViewColumn.Active, label);
+  //     context.subscriptions.push(webView);
+  //   })
+  // );
 }
 
 // this method is called when your extension is deactivated

@@ -1,6 +1,7 @@
 import { ExtensionContext, languages } from "vscode";
 import * as vscode from "vscode";
 import { translate } from "../utils/translate";
+import { Language } from "../config/language";
 /**
  * 鼠标悬停至某个单词，在上方显示翻译信息
  */
@@ -25,10 +26,9 @@ export class HoverTranslate {
       { provideHover: this.provideHover }
     );
   }
-  
+
   removeHover() {
     this.disposable?.dispose();
-
   }
 
   async provideHover(document: vscode.TextDocument, position: vscode.Position) {
@@ -43,7 +43,7 @@ export class HoverTranslate {
     }
     const result = await translate(text);
     if (result.dict) {
-      return new vscode.Hover(`译：${result.dict}`);
+      return new vscode.Hover(`译：${result.dict.join('\n')}`);
     }
   }
 }

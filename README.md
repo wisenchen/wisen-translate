@@ -1,11 +1,9 @@
 # wisen-translate
+一个翻译插件
 
-## 内嵌翻译网页
-这个插件嵌入了有道，百度的翻译页面可以在vscode中直接打开
-[gif]
-## 使用
-鼠标悬浮翻译
-[gif]
+### 功能
+1. 鼠标悬浮翻译
+2. 输入中文翻译成英文
 
 ### 快捷键
 
@@ -15,11 +13,10 @@
 | alt+w | 翻译选择文字                       |
 
 
-
 ### 配置项
 
 | 名称                        | 说明                                            | 默认值 |
 | --------------------------- | ----------------------------------------------- | ------ |
-| wisenTranslate.origin       | 设置翻译使用的源，可选填，baidu、youdao、google | youdao |
+| wisenTranslate.origin       | 设置翻译使用的源，可选填，baidu、youdao、google  | youdao |
 | wisenTranslate.disableHover | 是否禁用鼠标悬浮翻译                            | false  |
 

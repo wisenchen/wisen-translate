@@ -10,7 +10,7 @@ export const translate = async (option: TranslateOptions | string) => {
    */
   const translateOrigin = vscode.workspace
     .getConfiguration()
-    .get("wisenTranslate.origin");
+    .get("WisenTranslate.origin");
 
   // 默认配置项
   const defualtOptions: TranslateOptions =

@@ -57,6 +57,6 @@ export class TreeViewProvider implements TreeDataProvider<TreeItemNode> {
     const treeViewProvider = new TreeViewProvider();
     // registerTreeDataProvider：注册树视图
     // 你可以类比 registerCommand(上面注册 Hello World)
-    window.registerTreeDataProvider("wisenTranslate-item", treeViewProvider);
+    window.registerTreeDataProvider("WisenTranslate-item", treeViewProvider);
   }
 }

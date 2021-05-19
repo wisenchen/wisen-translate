@@ -3,8 +3,8 @@ export enum ApiId {
    * google翻译由于其网站设置了禁止以iframe加载所以删除
    */
   // Google = "google",
-  Baidu = "baidu",
-  Youdao = "youdao",
+  Baidu = "百度翻译",
+  Youdao = "有道翻译",
 }
 /**
  * 图标地址
