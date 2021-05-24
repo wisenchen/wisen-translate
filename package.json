@@ -1,8 +1,8 @@
 {
   "name": "wisen-translate",
   "displayName": "Wisen-Translate",
-  "description": "鼠标悬浮翻译，内嵌翻译页面",
-  "version": "0.0.1",
+  "description": "鼠标悬浮翻译",
+  "version": "1.0.1",
   "publisher": "wisen",
   "icon": "resource/icon.png",
   "keywords": [
