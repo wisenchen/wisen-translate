@@ -1,7 +1,6 @@
 import { ExtensionContext, languages } from "vscode";
 import * as vscode from "vscode";
 import { translate } from "../utils/translate";
-import { Language } from "../config/language";
 /**
  * 鼠标悬停至某个单词，在上方显示翻译信息
  */
@@ -33,7 +32,7 @@ export class HoverTranslate {
 
   async provideHover(document: vscode.TextDocument, position: vscode.Position) {
     const editor = vscode.window.activeTextEditor;
-    let text = document.getText(document.getWordRangeAtPosition(position));
+    let text = document.getText(document.getWordRangeAtPosition(position)).trim();
     if (editor) {
       // 获取鼠标选择区域文本
       const selectionText = editor.document.getText(editor.selection);

@@ -1,9 +1,6 @@
 # Change Log
 
-All notable changes to the "wisen-translate" extension will be documented in this file.
+## 1.1.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- 更换翻译库为translate.js
+- 翻译出错后不显示错误提示

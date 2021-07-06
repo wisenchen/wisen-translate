@@ -1,6 +1,6 @@
 import { TranslateAPI } from "../config/translate-api";
 import { TranslateOptions } from "../interfaces/translate-options";
-import { youdao, baidu, google } from "translation-api";
+import { youdao, baidu, google } from "translation.js";
 import * as vscode from "vscode";
 import { DEFAULT_FROM, DEFAULT_TO } from "../config";
 
@@ -37,9 +37,9 @@ export const translate = async (option: TranslateOptions | string) => {
     if (typeof error === "string") {
       vscode.window.showErrorMessage(error);
     } else {
-      vscode.window.showErrorMessage(
-        "翻译出错啦，可能是网络原因，可以修改翻译源再次尝试下哦！"
-      );
+      // vscode.window.showErrorMessage(
+      //   "翻译出错啦，可能是网络原因，可以修改翻译源再次尝试下哦！"
+      // );
     }
     throw error;
   }
