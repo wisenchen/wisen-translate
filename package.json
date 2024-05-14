@@ -2,7 +2,7 @@
   "name": "wisen-translate",
   "displayName": "Wisen-Translate",
   "description": "鼠标悬浮翻译",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "wisen",
   "icon": "resource/icon.png",
   "keywords": [
@@ -14,7 +14,7 @@
     "url": "https://github.com/wisenchen/wisen-translate.git"
   },
   "engines": {
-    "vscode": "^1.45.0"
+    "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
@@ -30,12 +30,13 @@
       "properties": {
         "WisenTranslate.origin": {
           "type": "string",
-          "default": "youdao",
-          "description": "设置翻译使用的源，可选填，baidu、youdao、google",
+          "default": "bing",
+          "description": "设置翻译使用的源，可选填，bing、baidu、youdao、google",
           "enum": [
             "baidu",
             "youdao",
-            "google"
+            "google",
+            "bing"
           ]
         },
         "WisenTranslate.disableHover": {
@@ -79,20 +80,18 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.45.0",
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.11.0",
+    "@types/vscode": "^1.89.0",
     "eslint": "^6.8.0",
-    "@typescript-eslint/parser": "^2.30.0",
-    "@typescript-eslint/eslint-plugin": "^2.30.0",
     "glob": "^7.1.6",
     "mocha": "^7.1.2",
-    "typescript": "^3.8.3",
+    "typescript": "^5.4.5",
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "rxjs": "^6.6.3",
+    "bing-translate-api": "^4.0.1",
     "translation.js": "^0.7.15"
   }
 }
