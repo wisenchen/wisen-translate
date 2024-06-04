@@ -72,6 +72,11 @@
         "command": "Wisen-translate.updateCozeAI",
         "title": "配置 coze BotID 和 Token",
         "category": "Wisen Translate"
+      },
+      {
+        "command": "Wisen-translate.switchOrigin",
+        "title": "切换翻译源",
+        "category": "Wisen Translate"
       }
     ],
     "keybindings": [
