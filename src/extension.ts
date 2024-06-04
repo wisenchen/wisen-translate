@@ -7,6 +7,8 @@ import { TreeViewProvider } from "./container/translate-provider";
 import { HoverTranslate } from "./core/hover-translate";
 import { InputZH2EN } from "./core/input-zh-en";
 import { TranslateHighlightText } from "./core/translate-highlight";
+import { registerUpdateConfigCommand } from "./core/set-config";
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
@@ -37,6 +39,9 @@ export function activate(context: vscode.ExtensionContext) {
   // 翻译选中文字
   new TranslateHighlightText(context);
 
+
+  registerUpdateConfigCommand()
+
   // 监听配置更改
   vscode.workspace.onDidChangeConfiguration((e) => {
     if (e.affectsConfiguration("WisenTranslate.disableHover")) {
@@ -50,9 +55,8 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }
   });
- 
 
-  // 
+  //
   // 视图容器
   // 实现树视图的初始化
   // TreeViewProvider.init();

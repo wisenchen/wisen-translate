@@ -3,4 +3,5 @@ export enum TranslateAPI {
   Google = "google",
   BaiDu = "baidu",
   Bing = "bing",
+  CozeAI = "cozeAI",
 }

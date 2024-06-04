@@ -2,7 +2,7 @@
   "name": "wisen-translate",
   "displayName": "Wisen-Translate",
   "description": "鼠标悬浮翻译",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "publisher": "wisen",
   "icon": "resource/icon.png",
   "keywords": [
@@ -31,18 +31,29 @@
         "WisenTranslate.origin": {
           "type": "string",
           "default": "bing",
-          "description": "设置翻译使用的源，可选填，bing、baidu、youdao、google",
+          "description": "设置翻译使用的源，可选填，bing、baidu、youdao、google、cozeAI",
           "enum": [
             "baidu",
             "youdao",
             "google",
-            "bing"
+            "bing",
+            "cozeAI"
           ]
         },
         "WisenTranslate.disableHover": {
           "type": "boolean",
           "default": false,
           "description": "是否禁用鼠标悬浮翻译"
+        },
+        "WisenTranslate.cozeBotId": {
+          "type": "string",
+          "default": "",
+          "description": "coze 上创建的翻译机器人 ID"
+        },
+        "WisenTranslate.cozeToken": {
+          "type": "string",
+          "default": "",
+          "description": "coze 上创建的个人令牌"
         }
       }
     },
@@ -55,6 +66,11 @@
       {
         "command": "Wisen-translate.translate-highlight",
         "title": "翻译选中文字",
+        "category": "Wisen Translate"
+      },
+      {
+        "command": "Wisen-translate.updateCozeAI",
+        "title": "配置 coze BotID 和 Token",
         "category": "Wisen Translate"
       }
     ],
@@ -74,6 +90,8 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish",
     "lint": "eslint src --ext ts",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",

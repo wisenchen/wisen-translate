@@ -1,6 +1,6 @@
 import { TranslateAPI } from "../config/translate-api";
 import { TranslateOptions } from "../interfaces/translate-options";
-import { youdao, baidu, google, bing } from "./translate-api";
+import { youdao, baidu, google, bing, CozeAI } from "./translate-api";
 import * as vscode from "vscode";
 import { DEFAULT_FROM, DEFAULT_TO } from "../config";
 
@@ -31,6 +31,8 @@ export const translate = async (option: TranslateOptions | string) => {
         return await google.translate(defualtOptions);
       case TranslateAPI.Bing:
         return await bing.translate(defualtOptions);
+      case TranslateAPI.CozeAI:
+        return await CozeAI.translate(defualtOptions);
       default:
         // eslint-disable-next-line no-throw-literal
         throw "请配置正确的翻译源";
