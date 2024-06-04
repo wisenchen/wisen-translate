@@ -27,9 +27,11 @@
 #### coze AI 翻译 教程
 1. 创建个人令牌
 先到 coze 上 https://www.coze.cn/open/api 创建一个个人令牌，如图
-![alt text](./doc/coze-token.png)
+![coze-token](https://github.com/wisenchen/wisen-translate/assets/41280500/7269e85d-162f-4f88-ae82-e2f3ab06d860)
+
 2. 创建一个bot
-![alt text](./doc/create-bot.png)
+![create-bot](https://github.com/wisenchen/wisen-translate/assets/41280500/1e6673da-4c2a-4324-bef1-53a0837a9bf1)
+
 prompt 可以参考,来自定义符合需求的翻译规则
     ```
     # 角色
@@ -44,16 +46,18 @@ prompt 可以参考,来自定义符合需求的翻译规则
     - 输出的内容必须是符合要求的翻译结果，不能有其他无关内容。
     ```
 
-![alt text](./doc/prompt.png)
+![prompt](https://github.com/wisenchen/wisen-translate/assets/41280500/09752f75-5c76-44e3-811f-a5c0e517ff53)
 
 3. 发布到 Bot as API
 点击右上角发布，之后勾选 Bot as API
-![alt text](./doc/publish.png)
+![publish](https://github.com/wisenchen/wisen-translate/assets/41280500/7fcd7c34-2ff3-42b9-aeaa-8bc59d452bf0)
 
-4. 配置 BotID  和 Token
+
+5. 配置 BotID  和 Token
 BotID 可以从url上获取
-![alt text](./doc/config.png)
+![config](https://github.com/wisenchen/wisen-translate/assets/41280500/1857bf8c-1838-46b1-a49e-b8f9e1184c83)
+
 ctrl + shift + p ，输入 translate
-![alt text](./doc/set-coze.png)
+![set-coze](https://github.com/wisenchen/wisen-translate/assets/41280500/b0c3e329-2ccc-4f24-a454-a689c59fe039)
 
 详细文档参阅 https://www.coze.cn/docs/developer_guides/coze_api_overview
