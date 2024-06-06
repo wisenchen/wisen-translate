@@ -1,8 +1,8 @@
 {
   "name": "wisen-translate",
   "displayName": "Wisen-Translate",
-  "description": "鼠标悬浮翻译",
-  "version": "2.0.1",
+  "description": "AI 鼠标悬浮翻译",
+  "version": "2.0.2",
   "publisher": "wisen",
   "icon": "resource/icon.png",
   "keywords": [

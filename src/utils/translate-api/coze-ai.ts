@@ -1,3 +1,4 @@
+import { Language } from "../../config/language";
 import { TranslateOptions } from "translation.js/declaration/api/types";
 import * as vscode from "vscode";
 
@@ -51,6 +52,13 @@ class CozeAITranslate {
       };
     }
 
+    if (!this.validateText(options.text, options)) {
+      return {
+        dict: [],
+        result: [],
+      };
+    }
+
     const data = JSON.stringify({
       conversation_id: Date.now() + "",
       bot_id: this.cozeBotId,
@@ -60,6 +68,8 @@ class CozeAITranslate {
     });
 
     const res = await this.requestCozeAI(data);
+    console.info(`翻译文本：${options.text}`)
+    console.info('接口返回结果：', res)
     if (res.code === 0) {
       return {
         dict: [res.messages[0].content],
@@ -72,6 +82,7 @@ class CozeAITranslate {
       result: [],
     };
   }
+
   requestCozeAI(data: any): Promise<CozeAIResponse> {
     const requestOptions = {
       hostname: "api.coze.cn",
@@ -106,6 +117,23 @@ class CozeAITranslate {
       req.write(data);
       req.end();
     });
+  }
+
+  /**
+   * 校验选中的文本是否符合翻译条件
+   */
+  validateText(text: string, options: TranslateOptions) {
+    if (!text) {
+      return false;
+    }
+    // 如果包含中文，并且目标语言也是中文则不翻译
+    if (
+      /[\u4e00-\u9fa5]/.test(text) &&
+      [Language.ZhCn, Language.ZhTW].includes(options.to as Language)
+    ) {
+      return false;
+    }
+    return true;
   }
 }
 export const CozeAI = new CozeAITranslate();
