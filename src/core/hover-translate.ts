@@ -32,7 +32,11 @@ export class HoverTranslate {
 
   async provideHover(document: vscode.TextDocument, position: vscode.Position) {
     const editor = vscode.window.activeTextEditor;
-    let text = document.getText(document.getWordRangeAtPosition(position)).trim();
+    const currentPosition = document.getWordRangeAtPosition(position)
+    let text = '';
+    if(currentPosition){
+      text = document.getText(currentPosition).trim()
+    }
     if (editor) {
       // 获取鼠标选择区域文本
       const selectionText = editor.document.getText(editor.selection);
