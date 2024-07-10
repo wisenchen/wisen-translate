@@ -28,7 +28,6 @@ export class TranslateHighlightText {
             return;
           }
           const translateResult = await translate(selectionText);
-          console.log(translateResult,"hightlight");
           if (translateResult.result) {
             vscode.window.showInformationMessage(`
             翻译结果：${translateResult.result.join("")}

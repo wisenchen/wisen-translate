@@ -17,7 +17,6 @@ export default class BingAPI {
     const from = this.getLang((options.from as Language) || Language.Auto);
     const to = this.getLang((options.to as Language) || Language.ZhCn);
     const res = await translate(options.text, from, to);
-    console.log(res.translation);
     return {
       dict: [res.translation],
       result: [res.translation],

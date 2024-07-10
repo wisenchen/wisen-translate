@@ -1,9 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-import { ApiId } from "./config/webViewConfgi";
-import { createWebView } from "./container/google.view";
-import { TreeViewProvider } from "./container/translate-provider";
 import { HoverTranslate } from "./core/hover-translate";
 import { InputZH2EN } from "./core/input-zh-en";
 import { TranslateHighlightText } from "./core/translate-highlight";
